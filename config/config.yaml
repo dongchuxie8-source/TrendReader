@@ -107,54 +107,130 @@ platforms:
 # enabled: 可选，默认 true
 # max_age_days: 可选，覆盖全局 freshness_filter.max_age_days
 # ===============================================================
+# ===============================================================
+# 3. 数据源 - RSS 订阅
+# ===============================================================
 rss:
   enabled: true                       # 是否启用 RSS 抓取
 
-  # 文章新鲜度过滤配置（全局默认值）
-  # 过滤掉发布时间超过指定天数的旧文章，避免同一篇文章重复出现在推送中
-  #
-  # 过滤逻辑：
-  #   - 文章发布时间距当前时间（app.timezone 时区）超过 N 天则不推送
-  #   - 无发布时间的文章会被保留（不过滤）
-  #
-  # ⚠️ 过滤时机：在推送阶段过滤
-  #    - 所有文章都会存入数据库（MCP Server 的 AI 查询仍可访问）
-  #    - 只有新鲜的文章会被推送到通知渠道
   freshness_filter:
-    enabled: true                     # 是否启用新鲜度过滤（默认启用）
+    enabled: true                     # 启用新鲜度过滤
+    max_age_days: 3                   # 只推送 3 天内的文章
 
-    max_age_days: 3                   # 最大文章年龄（天）
-                                      # - 正整数：只推送 N 天内的文章
-                                      # - 0：禁用过滤，推送所有文章
-
-  # 单个 feed 可配置 max_age_days 覆盖全局设置：
-  # - 不配置：使用全局 freshness_filter.max_age_days（默认 3 天）
-  # - 正整数：覆盖全局设置，只推送此天数内的文章
-  # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    - id: "hacker-news"
+    # 🧪 Machine Learning & AI (重点关注)
+    - id: "deepmind-blog"
+      name: "DeepMind"
+      url: "https://deepmind.com/blog/feed/basic/"
+    - id: "openai-news"
+      name: "OpenAI Engineering"
+      url: "https://openai.com/news/engineering/rss.xml"
+    - id: "google-ai-blog"
+      name: "Google AI Blog"
+      url: "http://googleresearch.blogspot.com/atom.xml"
+    - id: "mit-ai-news"
+      name: "MIT News - AI"
+      url: "http://news.mit.edu/rss/topic/artificial-intelligence2"
+    - id: "bair-blog"
+      name: "Berkeley AI Research"
+      url: "http://bair.berkeley.edu/blog/feed.xml"
+    - id: "lilian-weng"
+      name: "Lil’Log (Lilian Weng)"
+      url: "https://lilianweng.github.io/lil-log/feed.xml"
+    - id: "distill-pub"
+      name: "Distill"
+      url: "http://distill.pub/rss.xml"
+    - id: "jay-alammar"
+      name: "Jay Alammar"
+      url: "https://jalammar.github.io/feed.xml"
+    - id: "nvidia-dev-blog"
+      name: "Nvidia Developer Blog"
+      url: "https://developer.nvidia.com/blog/feed"
+    - id: "pytorch-blog"
+      name: "PyTorch"
+      url: "https://pytorch.org/feed"
+
+    # 🛠️ Engineering Blogs
+    - id: "github-blog-eng"
+      name: "GitHub Engineering"
+      url: "http://githubengineering.com/atom.xml"
+    - id: "cloudflare-blog"
+      name: "The Cloudflare Blog"
+      url: "https://blog.cloudflare.com/rss/"
+    - id: "uber-eng"
+      name: "Uber Engineering"
+      url: "https://www.uber.com/blog/engineering/rss/"
+    - id: "meta-eng"
+      name: "Engineering at Meta"
+      url: "https://engineering.fb.com/feed/"
+    - id: "stripe-blog"
+      name: "Stripe Blog"
+      url: "https://stripe.com/blog/feed.rss"
+    - id: "slack-eng"
+      name: "Slack Engineering"
+      url: "https://slack.engineering/feed"
+
+    # 🔬 Science & Research
+    - id: "nature-journal"
+      name: "Nature"
+      url: "http://www.nature.com/nature/current_issue/rss"
+    - id: "quanta-magazine"
+      name: "Quanta Magazine"
+      url: "http://www.quantamagazine.org/feed/"
+    - id: "mit-research"
+      name: "MIT News Research"
+      url: "https://news.mit.edu/rss/research"
+    - id: "science-alert"
+      name: "ScienceAlert"
+      url: "https://www.sciencealert.com/rss"
+
+    # 🚀 Startup & Tech News
+    - id: "hacker-news-rss"
       name: "Hacker News"
-      url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
+      url: "http://news.ycombinator.com/rss"
+    - id: "techcrunch"
+      name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
+    - id: "the-verge"
+      name: "The Verge"
+      url: "http://www.theverge.com/rss/full.xml"
+    - id: "product-hunt"
+      name: "Product Hunt"
+      url: "http://www.producthunt.com/feed"
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
+    # 🧠 Learning & Psychology
+    - id: "fs-blog"
+      name: "Farnam Street"
+      url: "https://fs.blog/feed/"
+    - id: "ness-labs"
+      name: "Ness Labs"
+      url: "https://nesslabs.com/feed"
+    - id: "scott-young"
+      name: "Scott H Young"
+      url: "https://feeds.feedburner.com/scotthyoung/HAHx"
     
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+    # 📺 YouTube Technical Channels
+    - id: "two-minute-papers"
+      name: "Two Minute Papers"
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg"
+    - id: "yannic-kilcher"
+      name: "Yannic Kilcher"
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCZHmQk67mSJgfCCTn7xBfew"
 
-    # 自定义源示例
-    # - id: "custom-feed"
-    #   name: "自定义源"
-    #   url: "https://example.com/feed.xml"
-    #   enabled: false
-    #   max_age_days: 0               # 示例：禁用过滤，推送所有文章
+# 1. Reddit (以你关注的强化学习为例)
+    - id: "reddit-rl"
+      name: "Reddit Reinforcement Learning"
+      url: "https://www.reddit.com/r/reinforcementlearning/.rss"
 
+    # 2. 如果 "folo" 是指 Sohu (搜狐热点)
+    - id: "sohu-news"
+      name: "搜狐新闻"
+      url: "https://rsshub.app/sohu/news" # 建议通过 RSSHub 引入更稳定
 
+    # 3. 如果 "folo" 是指 InfoQ (技术精选)
+    - id: "infoq-china"
+      name: "InfoQ 技术精选"
+      url: "https://www.infoq.cn/public/rss/utils/rss.xml"
 # ===============================================================
 # 4. 报告模式
 #
