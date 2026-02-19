@@ -256,3 +256,77 @@
 
 # 产业政策
 生产力
+# ═══════════════════════════════════════════════════════════════
+#                         具身智能 (Embodied AI)
+# ═══════════════════════════════════════════════════════════════
+
+[具身智能]
+/视觉动力策略|Visual-Motor Policy/ => 视觉动力策略
+/仿生机器人|Bionic Robotics/ => 仿生机器人
+/端到端学习|End-to-End Learning/ => 端到端学习
+/仿真到现实迁移|Sim-to-Real/ => Sim-to-Real
+/世界模型|World Models/ => 世界模型
+/触觉感知|Tactile Sensing/ => 触觉感知
+/灵巧手控制|Dexterous Manipulation/ => 灵巧手控制
+/扩散策略|Diffusion Policy/ => 扩散策略
+/实时同步定位与建图|\bSLAM\b/ => SLAM
+/基础大模型|Foundation Models/ => 基础大模型
+/全身协同控制|Whole-body Control/ => 全身协同控制
+/视觉语言导航|Visual Language Navigation/ => 视觉语言导航
+/交互式感知|Interactive Perception/ => 交互式感知
+/强化学习|Reinforcement Learning/ => 强化学习
+/模仿学习|Imitation Learning/ => 模仿学习
+/语义映射|Semantic Mapping/ => 语义映射
+/视觉语言动作模型|\bVLA\b/ => VLA 模型
+/运动规划|Motion Planning/ => 运动规划
+/空间智能|Spatial Intelligence/ => 空间智能
+/触觉反馈|Haptic Feedback/ => 触觉反馈
+/边缘推理|Edge Inference/ => 边缘推理
+/\bNeRF\b|神经辐射场/ => NeRF
+/3D高斯泼溅|3D Gaussian Splatting/ => 3DGS
+/多模态感知|Multimodal Perception/ => 多模态感知
+/力位混合控制|Force\/Position Control/ => 力位控制
+/自主避障|Autonomous Obstacle Avoidance/ => 自主避障
+/迁移学习|Transfer Learning/ => 迁移学习
+/人机协作|Human-Robot Interaction/ => 人机协作
+/长期任务规划|Long-horizon Planning/ => 长期规划
+/姿态估计|Pose Estimation/ => 姿态估计
+@10
+
+
+# ═══════════════════════════════════════════════════════════════
+#                         AI 前沿 (Frontier AI)
+# ═══════════════════════════════════════════════════════════════
+
+[AI 前沿]
+/比例定律|Scaling Laws/ => 比例定律
+/混合专家模型|\bMoE\b/ => MoE
+/检索增强生成|\bRAG\b/ => RAG
+/思维链|Chain of Thought/ => 思维链
+/人类反馈强化学习|\bRLHF\b/ => RLHF
+/直接偏好优化|\bDPO\b/ => DPO
+/多模态大模型|\bLMM\b/ => 多模态大模型
+/推测解码|Speculative Decoding/ => 推测解码
+/稀疏计算|Sparse Computing/ => 稀疏计算
+/智能体工作流|Agentic Workflow/ => 智能体
+/线性注意力机制|Linear Attention/ => 线性注意力
+/状态空间模型|\bSSM\b|Mamba/ => SSM/Mamba
+/模型量化|Model Quantization/ => 模型量化
+/跨模态生成|Cross-modal Generation/ => 跨模态生成
+/长文本窗口|Long Context Window/ => 长文本
+/神经符号人工智能|Neuro-symbolic AI/ => 神经符号AI
+/自监督学习|Self-supervised Learning/ => 自监督学习
+/参数高效微调|\bPEFT\b|\bLoRA\b/ => PEFT/LoRA
+/知识蒸馏|Knowledge Distillation/ => 知识蒸馏
+/联邦学习|Federated Learning/ => 联邦学习
+/通用人工智能|\bAGI\b/ => AGI
+/零样本学习|Zero-shot Learning/ => 零样本学习
+/提示词工程|Prompt Engineering/ => 提示词工程
+/扩散模型|Diffusion Models/ => 扩散模型
+/生成式对抗网络|\bGANs\b/ => GANs
+/变分自编码器|\bVAE\b/ => VAE
+/模型对齐|Model Alignment/ => 模型对齐
+/视觉互感器|Vision Transformer/ => ViT
+/图神经网络|\bGNN\b/ => GNN
+/自动机器学习|\bAutoML\b/ => AutoML
+@10
